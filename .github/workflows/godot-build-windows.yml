@@ -24,11 +24,13 @@ jobs:
 
       - name: Descargar Godot headless y export templates
         run: |
-          wget https://downloads.tuxfamily.org/godotengine/${GODOT_VERSION}/Godot_v${GODOT_VERSION}-linux_headless.64.zip
-          wget https://downloads.tuxfamily.org/godotengine/${GODOT_VERSION}/Godot_v${GODOT_VERSION}_export_templates.tpz
-          unzip Godot_v${GODOT_VERSION}-linux_headless.64.zip -d ~/godot
+          GODOT_VERSION=${GODOT_VERSION}
+          wget https://github.com/godotengine/godot-builds/releases/download/${GODOT_VERSION}-stable/Godot_v${GODOT_VERSION}-stable_linux_headless.64.zip
+          wget https://github.com/godotengine/godot-builds/releases/download/${GODOT_VERSION}-stable/Godot_v${GODOT_VERSION}-stable_export_templates.tpz
+          unzip Godot_v${GODOT_VERSION}-stable_linux_headless.64.zip -d ~/godot
           mkdir -p ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable/
-          unzip Godot_v${GODOT_VERSION}_export_templates.tpz -d ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable/
+          unzip Godot_v${GODOT_VERSION}-stable_export_templates.tpz -d ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable/
+
 
       - name: Dar permisos
         run: chmod +x ~/godot/Godot_v${GODOT_VERSION}-linux_headless.64
