@@ -1,0 +1,50 @@
+name: Build Godot Windows EXE
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build-windows:
+    runs-on: ubuntu-latest
+
+    env:
+      GODOT_VERSION: 4.3
+      EXPORT_NAME: game.exe
+
+    steps:
+      - name: Checkout del código
+        uses: actions/checkout@v4
+
+      - name: Configurar caché
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache
+          key: ${{ runner.os }}-godot-${{ env.GODOT_VERSION }}
+
+      - name: Descargar Godot headless y export templates
+        run: |
+          wget https://downloads.tuxfamily.org/godotengine/${GODOT_VERSION}/Godot_v${GODOT_VERSION}-linux_headless.64.zip
+          wget https://downloads.tuxfamily.org/godotengine/${GODOT_VERSION}/Godot_v${GODOT_VERSION}_export_templates.tpz
+          unzip Godot_v${GODOT_VERSION}-linux_headless.64.zip -d ~/godot
+          mkdir -p ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable/
+          unzip Godot_v${GODOT_VERSION}_export_templates.tpz -d ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable/
+
+      - name: Dar permisos
+        run: chmod +x ~/godot/Godot_v${GODOT_VERSION}-linux_headless.64
+
+      - name: Crear carpeta de build
+        run: mkdir -p build/windows
+
+      - name: Exportar a Windows (.exe)
+        run: |
+          ~/godot/Godot_v${GODOT_VERSION}-linux_headless.64 \
+            --headless \
+            --verbose \
+            --export-release "Windows Desktop" build/windows/${EXPORT_NAME}
+
+      - name: Subir artefacto .exe
+        uses: actions/upload-artifact@v4
+        with:
+          name: windows-build
+          path: build/windows/
