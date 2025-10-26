@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+#Exportaciones de nodos
 @onready var anim = $AnimatedSprite2D
 @onready var area_ataque = $Area2D
 @onready var vida_ui = get_tree().root.get_node("Juego/CanvasLayer") 
@@ -10,12 +11,10 @@ extends CharacterBody2D
 @onready var musica = $musicaFondo
 @onready var recoger_moneda = $recolectar_moneda
 
-
-
-
 # --- CONSTANTES ---
 @export var gravedad: float = 1200.0
 @export var max_caida: float = 1000.0
+
 
 const VELOCIDAD = 150.0
 const IMPULSO_SALTO = -400.0
