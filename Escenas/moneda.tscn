@@ -1,0 +1,125 @@
+[gd_scene load_steps=19 format=3 uid="uid://d2k3o2gap5rtp"]
+
+[ext_resource type="Script" uid="uid://cfjoq8xfawlat" path="res://Scripts/moneda.gd" id="1_n1bbm"]
+[ext_resource type="Texture2D" uid="uid://carc31qntdapy" path="res://Escenarios/coin3_16x16.png" id="1_u6us8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n1bbm"]
+atlas = ExtResource("1_u6us8")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5i42n"]
+atlas = ExtResource("1_u6us8")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k0ua0"]
+atlas = ExtResource("1_u6us8")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yw0am"]
+atlas = ExtResource("1_u6us8")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8m4mm"]
+atlas = ExtResource("1_u6us8")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hw0mt"]
+atlas = ExtResource("1_u6us8")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mn0ys"]
+atlas = ExtResource("1_u6us8")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4eor8"]
+atlas = ExtResource("1_u6us8")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yxf4g"]
+atlas = ExtResource("1_u6us8")
+region = Rect2(128, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1c07j"]
+atlas = ExtResource("1_u6us8")
+region = Rect2(144, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pdejf"]
+atlas = ExtResource("1_u6us8")
+region = Rect2(160, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_do1oe"]
+atlas = ExtResource("1_u6us8")
+region = Rect2(176, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oqlux"]
+atlas = ExtResource("1_u6us8")
+region = Rect2(192, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_laoyu"]
+atlas = ExtResource("1_u6us8")
+region = Rect2(208, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t8uu3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n1bbm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5i42n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k0ua0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yw0am")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8m4mm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hw0mt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mn0ys")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4eor8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yxf4g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1c07j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pdejf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_do1oe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oqlux")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_laoyu")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3ndwd"]
+
+[node name="moneda" type="Area2D"]
+script = ExtResource("1_n1bbm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_t8uu3")
+animation = &"idle"
+frame = 6
+frame_progress = 0.4358196
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1.0993367, 0.9448747)
+shape = SubResource("CircleShape2D_3ndwd")

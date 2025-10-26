@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b086ebds733o7"
+path="res://.godot/imported/Cerdos (mp3cut.net).mp3-63212b76ce57e26d7ada5992924f191f.mp3str"
+
+[deps]
+
+source_file="res://Musica/Cerdos (mp3cut.net).mp3"
+dest_files=["res://.godot/imported/Cerdos (mp3cut.net).mp3-63212b76ce57e26d7ada5992924f191f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://jx6pj27qpaqm"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+follow_viewport_enabled = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 66.0
+offset_bottom = 34.0
