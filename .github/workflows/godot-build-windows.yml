@@ -2,7 +2,7 @@ name: Build Godot Windows EXE
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   build-windows:
@@ -31,16 +31,15 @@ jobs:
           mkdir -p ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable/
           unzip Godot_v3.6.2-stable_export_templates.tpz -d ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable/
 
-
       - name: Dar permisos
-        run: chmod +x ~/godot/Godot_v3.6.2-stable_linux_headless.64.zip
+        run: chmod +x ~/godot/Godot_v3.6.2-stable_linux_headless.64
 
       - name: Crear carpeta de build
         run: mkdir -p build/windows
 
       - name: Exportar a Windows (.exe)
         run: |
-          ~/godot/Godot_v3.6.2-stable_linux_headless.64.zip \
+          ~/godot/Godot_v3.6.2-stable_linux_headless.64 \
             --headless \
             --verbose \
             --export-release "Windows Desktop" build/windows/${EXPORT_NAME}
