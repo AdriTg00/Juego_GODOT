@@ -427,7 +427,7 @@ animations = [{
 
 [node name="Juego" type="Node2D"]
 
-[node name="Escenario" parent="." instance=ExtResource("1_d3d2o")]
+[node name="PrimerNivel" parent="." instance=ExtResource("1_d3d2o")]
 position = Vector2(2, -28)
 
 [node name="Puerta" parent="." instance=ExtResource("3_spkme")]

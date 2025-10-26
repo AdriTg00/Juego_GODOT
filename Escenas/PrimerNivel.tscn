@@ -1251,7 +1251,7 @@ size = Vector2(18.797539, 22.661873)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gjw6x"]
 size = Vector2(6.9924316, 21.328804)
 
-[node name="Escenario" type="StaticBody2D"]
+[node name="PrimerNivel" type="StaticBody2D"]
 collision_layer = 7
 
 [node name="Background" type="TileMapLayer" parent="."]
