@@ -113,7 +113,7 @@ func _iniciar_patruya():
 		return
 	patrullando = true
 	_patrol_loop()
-
+f
 func recibir_dano(cantidad: int = 1):
 	en_persecucion = false
 	patrullando = false

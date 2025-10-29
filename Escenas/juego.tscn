@@ -530,12 +530,36 @@ position = Vector2(1354, -287)
 
 [node name="enemigo" parent="enemigos" instance=ExtResource("3_n77xa")]
 position = Vector2(192, -42)
+margen_colision = null
+velocidad = null
+gravedad = null
+max_caida = null
+rango_persecucion = null
+tiempo_idle_colision = null
 
 [node name="enemigo2" parent="enemigos" instance=ExtResource("3_n77xa")]
 position = Vector2(603, -77)
+margen_colision = null
+velocidad = null
+gravedad = null
+max_caida = null
+rango_persecucion = null
+tiempo_idle_colision = null
 
 [node name="enemigo3" parent="enemigos" instance=ExtResource("3_n77xa")]
 position = Vector2(1080, -381)
+margen_colision = null
+velocidad = null
+gravedad = null
+max_caida = null
+rango_persecucion = null
+tiempo_idle_colision = null
 
 [node name="enemigo4" parent="enemigos" instance=ExtResource("3_n77xa")]
 position = Vector2(1764, -253)
+margen_colision = null
+velocidad = null
+gravedad = null
+max_caida = null
+rango_persecucion = null
+tiempo_idle_colision = null
