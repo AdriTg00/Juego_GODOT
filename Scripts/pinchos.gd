@@ -25,7 +25,7 @@ func _on_body_entered(body):
 func _on_body_exited(body):
 	if body in players_in_area:
 		players_in_area.erase(body)
-		print("Jugador salió de los pinchos")
+		
 
 func _apply_damage():
 	for player in players_in_area:

@@ -93,7 +93,7 @@ func _colisiona_con_jugador() -> bool:
 	if jugador:
 		var dx = abs(global_position.x - jugador.global_position.x)
 		var dy = abs(global_position.y - jugador.global_position.y)
-		return dx < margen_colision and dy < margen_colision
+		return dx < margen_colision and dy < margen_colision 
 	return false
 
 

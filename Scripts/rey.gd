@@ -30,6 +30,8 @@ var vida = 5
 var invulnerable = false
 var monedas = 0
 
+var recibiendo_daño := false;
+
 # ---  PARA SABER SI ESTA MUERTO
 var muerto = false
 # --- BLOQUEO DE ANIMACIÓN DE PUERTA ---
@@ -127,6 +129,10 @@ func recibir_dano(cantidad: int = 1):
 	
 	if muerto or invulnerable:
 		return
+		# --- Bloqueo temporal ---
+	recibiendo_daño = true
+	invulnerable = true
+	atacando = true
 	
 	anim.play("hit")
 
@@ -144,9 +150,7 @@ func recibir_dano(cantidad: int = 1):
 		_morir()
 		return
 
-	# --- Bloqueo temporal ---
-	invulnerable = true
-	atacando = true
+
 	
 	hit.play()
 # --- Retroceso estilo pixel platformer ---
@@ -165,6 +169,7 @@ func recibir_dano(cantidad: int = 1):
 	
 	atacando = false
 	invulnerable = false
+	recibiendo_daño = false
 
 	# --- Cooldown de invulnerabilidad ---
 	await get_tree().create_timer(1.0).timeout
@@ -179,6 +184,8 @@ func _morir():
 # --- ATAQUE ---
 
 func _atacar():
+	if recibiendo_daño:
+		return
 	atacando = true
 	puede_atacar = false
 	anim.play("attack")

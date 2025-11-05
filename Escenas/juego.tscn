@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://b0vjtjiqkhxpo"]
+[gd_scene load_steps=66 format=3 uid="uid://b0vjtjiqkhxpo"]
 
 [ext_resource type="PackedScene" uid="uid://bojdsefgg5ctc" path="res://Escenas/PrimerNivel.tscn" id="1_d3d2o"]
 [ext_resource type="PackedScene" uid="uid://bv2mgkpwgojls" path="res://Escenas/rey.tscn" id="2_spkme"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://d1b1b2vush8r3" path="res://Escenarios/Big Heart Idle (18x14).png" id="7_irylq"]
 [ext_resource type="FontFile" uid="uid://c1jfsmqgedydq" path="res://fuentes/upheavtt.ttf" id="7_va84l"]
 [ext_resource type="PackedScene" uid="uid://d2k3o2gap5rtp" path="res://Escenas/moneda.tscn" id="8_irylq"]
+[ext_resource type="FontFile" path="C:/Users/atgno/Documents/Juego_GODOT/fuentes/upheavtt.ttf" id="8_wqotv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n1ln3"]
 atlas = ExtResource("6_i3j75")
@@ -488,6 +489,16 @@ theme_override_font_sizes/font_size = 70
 text = "
 "
 
+[node name="timerLabel" type="Label" parent="CanvasLayer"]
+offset_left = 22.999998
+offset_top = 87.0
+offset_right = 111.0
+offset_bottom = 136.0
+theme_override_fonts/font = ExtResource("8_wqotv")
+theme_override_font_sizes/font_size = 50
+text = "Time: 00:00
+"
+
 [node name="monedas" type="Node" parent="."]
 
 [node name="moneda" parent="monedas" instance=ExtResource("8_irylq")]
@@ -532,10 +543,10 @@ position = Vector2(1354, -287)
 position = Vector2(192, -42)
 
 [node name="enemigo2" parent="enemigos" instance=ExtResource("3_n77xa")]
-position = Vector2(603, -77)
+position = Vector2(596, -84)
 
 [node name="enemigo3" parent="enemigos" instance=ExtResource("3_n77xa")]
-position = Vector2(1080, -381)
+position = Vector2(1070, -391)
 
 [node name="enemigo4" parent="enemigos" instance=ExtResource("3_n77xa")]
-position = Vector2(1764, -253)
+position = Vector2(1770, -259)

@@ -2,6 +2,7 @@ extends CanvasLayer
 
 # --- CONFIGURACIÓN DEL HUD ---
 @onready var score_label = $ScoreLabel
+@onready var timerLabel = $timerLabel
 @export var hud_offset := Vector2(-500, -250)  # Desplazamiento del HUD en pantalla
 @export var suavizado := true
 @export var velocidad_suavizado := 5.0
@@ -11,13 +12,15 @@ extends CanvasLayer
 var vida_actual := max_vida
 var corazones := []
 var score: int = 0
-
-
+var elapsed_time: float = 0.0
+var running: bool = false
 # --- VARIABLES INTERNAS ---
 var camara_actual: Camera2D = null
 
 
 func _ready():
+	#Empieza el tiempo
+	start_timer()
 	#Se empieza con 0 puntos
 	score_label.text = "Score: " + str(score)  # Muestra "0" al inicio
 	# 🔹 Inicializa corazones
@@ -31,17 +34,43 @@ func _ready():
 	_actualizar_camara()
 	get_tree().connect("node_added", Callable(self, "_on_node_added"))
 
+
+func start_timer():
+	elapsed_time = 0.0
+	running = true
+	
+func stop_timer():
+	running = false
+
+func update_timer_label():
+	var minutes = int(elapsed_time / 60)
+	var seconds = int(elapsed_time) % 60
+	timerLabel.text = "%02d:%02d" % [minutes, seconds]
+	
+func get_elapsed_ms() -> int:
+	return int(round(elapsed_time * 1000.0))  # INTEGER en SQLite
+
+func get_elapsed_text() -> String:
+	var minutes = int(elapsed_time / 60)
+	var seconds = int(elapsed_time) % 60
+	return "%02d:%02d" % [minutes, seconds]
+	
 func añadir_moneda(amount: int):
 	score += amount
 	score_label.text = "Score: " +str(score)
 	
 	
-func _process(delta):
+func _process(delta : float):
+	if running:
+		
+		elapsed_time += delta
+		update_timer_label()
+		
 	if not camara_actual:
 		_actualizar_camara()
 		return
 	
-
+	
 	var destino = camara_actual.get_screen_center_position() + hud_offset
 	if suavizado:
 		transform.origin = transform.origin.lerp(destino, delta * velocidad_suavizado)
