@@ -7,6 +7,9 @@ extends CanvasLayer
 @export var suavizado := true
 @export var velocidad_suavizado := 5.0
 
+@onready var resume_button = $VBoxContainer/reanudar
+@onready var save_button = $VBoxContainer/guardar
+@onready var exit_button = $VBoxContainer/salir
 # --- SISTEMA DE VIDA ---
 @export var max_vida := 5
 var vida_actual := max_vida
@@ -19,6 +22,7 @@ var camara_actual: Camera2D = null
 
 
 func _ready():
+	
 	#Empieza el tiempo
 	start_timer()
 	#Se empieza con 0 puntos

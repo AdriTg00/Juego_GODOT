@@ -83,6 +83,8 @@ func _perseguir_jugador():
 
 	# Si ya está tocando al jugador
 	if _colisiona_con_jugador():
+		if recibiendo_daño:
+			return
 		if jugador and jugador.has_method("recibir_dano"):
 			jugador.recibir_dano(1)
 		await _pausa_idle_colision()
@@ -100,6 +102,8 @@ func _colisiona_con_jugador() -> bool:
 
 # --- SE DETIENE AL CHOCAR ---
 func _pausa_idle_colision():
+	if recibiendo_daño:
+		return
 	en_pausa_colision = true
 	velocity.x = 0
 	await get_tree().create_timer(tiempo_idle_colision).timeout
@@ -115,6 +119,7 @@ func _iniciar_patruya():
 	_patrol_loop()
 
 func recibir_dano(cantidad: int = 1):
+	
 	en_persecucion = false
 	patrullando = false
 	if muerto or invulnerable:
