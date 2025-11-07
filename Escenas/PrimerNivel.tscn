@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://b8oqvc0fe7eue" path="res://Scripts/canvas_layer.gd" id="4_h146j"]
 [ext_resource type="Texture2D" uid="uid://de82kdu623pnf" path="res://Escenarios/Big Diamond Hit (18x14).png" id="5_gjw6x"]
 [ext_resource type="Texture2D" uid="uid://d1b1b2vush8r3" path="res://Escenarios/Big Heart Idle (18x14).png" id="6_nl4fh"]
-[ext_resource type="FontFile" uid="uid://c1jfsmqgedydq" path="res://fuentes/upheavtt.ttf" id="7_v3ylf"]
+[ext_resource type="FontFile" uid="uid://c1jfsmqgedydq" path="res://recursos/upheavtt.ttf" id="7_v3ylf"]
 [ext_resource type="PackedScene" uid="uid://d2k3o2gap5rtp" path="res://Escenas/moneda.tscn" id="8_1viw4"]
 [ext_resource type="PackedScene" uid="uid://dm2ovaj0lxot8" path="res://Escenas/enemigo.tscn" id="9_sosnl"]
 [ext_resource type="PackedScene" uid="uid://cqwbwnihpcogn" path="res://Escenas/pausa.tscn" id="10_h3qja"]
@@ -451,28 +451,28 @@ position = Vector2(26, 48.153145)
 scale = Vector2(3.7361634, 3.7361634)
 sprite_frames = SubResource("SpriteFrames_glomq")
 animation = &"hit"
-offset = Vector2(20, 0)
+offset = Vector2(80, 0)
 
 [node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="CanvasLayer"]
 position = Vector2(26, 48.153145)
 scale = Vector2(3.7361634, 3.7361634)
 sprite_frames = SubResource("SpriteFrames_pvcgu")
 animation = &"hit"
-offset = Vector2(40, 0)
+offset = Vector2(60, 0)
 
 [node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="CanvasLayer"]
 position = Vector2(26, 48.153145)
 scale = Vector2(3.7361634, 3.7361634)
 sprite_frames = SubResource("SpriteFrames_wp068")
 animation = &"hit"
-offset = Vector2(60, 0)
+offset = Vector2(40, 0)
 
 [node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="CanvasLayer"]
 position = Vector2(26, 48.153145)
 scale = Vector2(3.7361634, 3.7361634)
 sprite_frames = SubResource("SpriteFrames_deitq")
 animation = &"hit"
-offset = Vector2(80, 0)
+offset = Vector2(20, 0)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer"]
 position = Vector2(26, 48.153145)

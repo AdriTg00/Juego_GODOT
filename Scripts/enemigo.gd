@@ -44,7 +44,7 @@ func _physics_process(delta):
 	if en_persecucion and jugador and not en_pausa_colision and not recibiendo_daño:
 		_perseguir_jugador()
 	else:
-		if not patrullando and not recibiendo_daño and not en_pausa_colision:
+		if not patrullando and not recibiendo_daño and not en_pausa_colision and not en_persecucion:
 			_iniciar_patruya()
 		
 			
@@ -64,11 +64,7 @@ func _aplicar_gravedad(delta):
 
 # --- PERSEGUIR AL JUGADOR ---
 func _perseguir_jugador():
-	if not jugador:
-		return
-
 	var dist = global_position.distance_to(jugador.global_position)
-
 	# Si el jugador sale del rango
 	if dist > rango_persecucion:
 		en_persecucion = false
@@ -113,8 +109,6 @@ func _pausa_idle_colision():
 # --- PATRULLA (igual que antes, reducida) ---
 func _iniciar_patruya():
 	gruñido.stop()
-	if patrullando or muerto or en_persecucion:
-		return
 	patrullando = true
 	_patrol_loop()
 
